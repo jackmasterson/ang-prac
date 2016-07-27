@@ -1,12 +1,19 @@
 <!doctype html>
-<html lang = "en">
+<html lang = "en" ng-app="practiceApp">
 <head>
 	<title>Angular Practice</title>
 	<meta name="viewport" content="width=device-width", initial-scale="1">
 	<meta charset="utf-8">
-	<link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="app.module.js"></script>
+    <script src="practice-list/practice-list.module.js"></script>
+  	<script src="practice-list/practice-list.component.js"></script>
 </head>
 <body>
-	<script src="js/script.js"></script>
+
+
+	<practice-list></practice-list>
+
+	
 </body>
 </html>
