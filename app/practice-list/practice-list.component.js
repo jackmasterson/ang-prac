@@ -3,18 +3,17 @@
 //Register component
 
 angular.
-	module('practiceApp').
+	module('practiceList').
 	component('practiceList', {
 		templateUrl: 'practice-list/practice-list.template.html',
-		controller: function PracticeListController() { 
-			this.facts = [
-				{
-					info: 'I can wash my hands with my feet',
-					snippet: 'I learned it from the Internet'
-				}, {
-					info: 'I can speak backwards',
-					snippet: 'I learned it from the OCD'
-				}
-			];
-		}
+		controller: ['$http', 
+			function PracticeListController($http) { 
+				var self = this;
+
+				$http.get('practice/practice.json').then(function(response){
+					self.practice = response.data;
+					console.log(self.practice);
+				});
+			}
+		]
 	});
